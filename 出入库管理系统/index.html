@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>出入库操作</title>
+    <link rel="stylesheet" href="./style/index.css" />
+    <script src="./script/root.js"></script>
+</head>
+
+<body>
+    <!-- 导航链接 -->
+    <nav>
+        <h2>出入库管理系统</h2>
+        <p>
+            <a href="lib.html">查看库存</a> |
+            <a id="addNewItemButton">添加商品</a> |
+            <a id="clearInventoryButton">清空库存</a>
+        </p>
+    </nav>
+
+    <div class="container">
+        <!-- 入库表单 -->
+        <div class="form-container">
+            <h3>入库</h3>
+            <form id="inForm">
+                <label for="inItem">商品名称:</label>
+                <div class="dropdown">
+                    <input type="text" id="inItem" name="inItem" required onclick="toggleDropdown('inDropdown')" />
+                    <div id="inDropdown" class="dropdown-content">
+                        <!-- 商品选项将通过JavaScript动态添加到这里 -->
+                    </div>
+                </div>
+
+                <label for="inQuantity">数量:</label>
+                <input type="number" id="inQuantity" name="inQuantity" min="1" required />
+
+                <button type="submit" style="background-color: #007bff; color: #ffffff">
+                    入库
+                </button>
+            </form>
+        </div>
+
+        <!-- 出库表单 -->
+        <div class="form-container">
+            <h3>出库</h3>
+            <form id="outForm">
+                <label for="outItem">商品名称:</label>
+                <div class="dropdown">
+                    <input type="text" id="outItem" name="outItem" required onclick="toggleDropdown('outDropdown')" />
+                    <div id="outDropdown" class="dropdown-content">
+                        <!-- 商品选项将通过JavaScript动态添加到这里 -->
+                    </div>
+                </div>
+
+                <label for="outQuantity">数量:</label>
+                <input type="number" id="outQuantity" name="outQuantity" min="1" required />
+
+                <button type="submit" style="background-color: #4caf50; color: #ffffff">
+                    出库
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 添加商品弹窗 -->
+    <div id="addNewItemModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeAddNewItemModal">&times;</span>
+            <h3>添加商品</h3>
+            <form id="addFormItem">
+                <label for="newItem">商品名称:</label>
+                <input type="text" id="newItem" name="newItem" required />
+                <button type="submit">添加</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./script/index.js"></script>
+</body>
+
+</html>
