@@ -192,6 +192,34 @@ button:hover {
     background-color: var(--input-border-color);
 }
 
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    position: relative;
+    color: #666;
+  }
+  
+  footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%; /* 分割线宽度 */
+    height: 1px;
+    background-color: #ccc;
+  }
+  
+  footer a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+
 @media (max-width: 600px) {
     .container {
         padding: 10px;
